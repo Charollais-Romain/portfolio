@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Développeur Full Stack</title>
+    <meta
+      name="description"
+      content="Portfolio moderne d'un développeur full stack spécialisé en applications web performantes."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a class="logo" href="#accueil">R<span>Dev</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="menu" id="menu">
+          <a href="#accueil">Accueil</a>
+          <a href="#a-propos">A propos</a>
+          <a href="#competences">Competences</a>
+          <a href="#projets">Projets</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="accueil">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="badge">Disponible pour missions freelance</p>
+            <h1>Developpeur Full Stack orienté performance et experience utilisateur</h1>
+            <p>
+              Je conçois et developpe des applications web completes, du backend
+              robuste jusqu'aux interfaces modernes, avec un focus sur la
+              rapidite, la fiabilite et la scalabilite.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projets">Voir mes projets</a>
+              <a class="btn btn-secondary" href="#contact">Me contacter</a>
+            </div>
+          </div>
+          <aside class="hero-card">
+            <h2>Stack principale</h2>
+            <ul>
+              <li>Frontend: React, Next.js, TypeScript</li>
+              <li>Backend: Node.js, Express, Python</li>
+              <li>Data: PostgreSQL, MongoDB, Redis</li>
+              <li>DevOps: Docker, CI/CD, Cloud</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="a-propos">
+        <div class="container">
+          <h2>A propos</h2>
+          <p class="section-intro">
+            Passionne par la creation de produits numeriques utiles, je transforme
+            des idees en applications maintenables et prêtes pour la production.
+          </p>
+          <div class="stats">
+            <article>
+              <h3>3+</h3>
+              <p>Annees d'experience</p>
+            </article>
+            <article>
+              <h3>20+</h3>
+              <p>Projets livres</p>
+            </article>
+            <article>
+              <h3>99%</h3>
+              <p>Taux de satisfaction client</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="competences">
+        <div class="container">
+          <h2>Competences</h2>
+          <div class="skills-grid">
+            <article class="card">
+              <h3>Frontend</h3>
+              <p>Interfaces responsives, accessibilite, animations, architecture composant.</p>
+              <span>React, Next.js, Tailwind, TypeScript</span>
+            </article>
+            <article class="card">
+              <h3>Backend</h3>
+              <p>APIs REST et GraphQL, securite, logique metier, tests automatises.</p>
+              <span>Node.js, Express, FastAPI, JWT</span>
+            </article>
+            <article class="card">
+              <h3>Base de donnees</h3>
+              <p>Modelisation, optimisation de requetes et gestion de donnees a grande echelle.</p>
+              <span>PostgreSQL, MongoDB, Prisma, Redis</span>
+            </article>
+            <article class="card">
+              <h3>DevOps</h3>
+              <p>Automatisation du deploiement et supervision applicative.</p>
+              <span>Docker, GitHub Actions, Vercel, AWS</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projets">
+        <div class="container">
+          <h2>Projets recents</h2>
+          <div class="projects-grid">
+            <article class="project">
+              <h3>Plateforme SaaS de gestion RH</h3>
+              <p>
+                Conception d'une application full stack pour automatiser onboarding,
+                suivi des performances et reporting.
+              </p>
+              <a href="#" aria-label="Voir le projet SaaS">Voir le projet</a>
+            </article>
+            <article class="project">
+              <h3>E-commerce haute performance</h3>
+              <p>
+                Refonte complete frontend/backend avec optimisation SEO et
+                acceleration du temps de chargement.
+              </p>
+              <a href="#" aria-label="Voir le projet e-commerce">Voir le projet</a>
+            </article>
+            <article class="project">
+              <h3>Dashboard analytique en temps reel</h3>
+              <p>
+                Creation d'un tableau de bord connecte a plusieurs sources de
+                donnees, avec visualisations interactives.
+              </p>
+              <a href="#" aria-label="Voir le dashboard">Voir le projet</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="container contact-layout">
+          <div>
+            <h2>Parlons de ton projet</h2>
+            <p>
+              Tu as une idee, une application a lancer ou une base technique a
+              moderniser ? Ecris-moi et je te reponds rapidement.
+            </p>
+          </div>
+          <form class="contact-form">
+            <label for="name">Nom</label>
+            <input id="name" type="text" placeholder="Ton nom" required />
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="ton@email.com" required />
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" placeholder="Ton besoin"></textarea>
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2026 RDev - Portfolio Developpeur Full Stack</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
