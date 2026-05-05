@@ -19,7 +19,7 @@ if (contactForm) {
     event.preventDefault();
     const button = contactForm.querySelector("button");
     if (button) {
-      button.textContent = "Message envoye";
+      button.textContent = "Message envoyé";
       button.disabled = true;
     }
   });

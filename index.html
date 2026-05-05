@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | Développeur Full Stack</title>
+    <title>Portfolio | Romain Charollais — Alternance développeur</title>
     <meta
       name="description"
-      content="Portfolio moderne d'un développeur full stack spécialisé en applications web performantes."
+      content="Portfolio de Romain Charollais, étudiant en informatique, en recherche d'une alternance développeur."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -19,14 +19,15 @@
   <body>
     <header class="header">
       <div class="container nav">
-        <a class="logo" href="#accueil">R<span>Dev</span></a>
+        <a class="logo" href="#accueil">Romain<span>.</span>dev</a>
         <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
           <span></span><span></span><span></span>
         </button>
         <nav class="menu" id="menu">
           <a href="#accueil">Accueil</a>
-          <a href="#a-propos">A propos</a>
-          <a href="#competences">Competences</a>
+          <a href="#alternance">Alternance</a>
+          <a href="#parcours">Parcours</a>
+          <a href="#competences">Compétences</a>
           <a href="#projets">Projets</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -37,77 +38,115 @@
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-content">
-            <p class="badge">Disponible pour missions freelance</p>
-            <h1>Developpeur Full Stack orienté performance et experience utilisateur</h1>
+            <p class="badge badge-pulse">En recherche d'alternance</p>
+            <h1>Je suis Romain Charollais, étudiant en informatique, et je recherche une alternance en développement</h1>
             <p>
-              Je conçois et developpe des applications web completes, du backend
-              robuste jusqu'aux interfaces modernes, avec un focus sur la
-              rapidite, la fiabilite et la scalabilite.
+              Passionné par l'informatique depuis mon plus jeune âge, je suis curieux d'apprendre
+              de nouvelles technologies et de les mettre en pratique dans des projets concrets.
+              Je souhaite évoluer au sein d'une équipe dynamique pour continuer à progresser.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#projets">Voir mes projets</a>
-              <a class="btn btn-secondary" href="#contact">Me contacter</a>
+              <a class="btn btn-primary" href="#alternance">Mon profil alternance</a>
+              <a class="btn btn-secondary" href="#projets">Mes projets</a>
             </div>
+            <p class="hero-note">
+              Basé à <strong>Montpellier</strong> · Mobile selon opportunité · Disponible pour échanger rapidement.
+            </p>
           </div>
           <aside class="hero-card">
-            <h2>Stack principale</h2>
+            <h2>En ce moment</h2>
             <ul>
-              <li>Frontend: React, Next.js, TypeScript</li>
-              <li>Backend: Node.js, Express, Python</li>
-              <li>Data: PostgreSQL, MongoDB, Redis</li>
-              <li>DevOps: Docker, CI/CD, Cloud</li>
+              <li>Formation : <span class="highlight">BTS CIEL (2024-2026), Lycée Turgot</span></li>
+              <li>Compétences techniques : HTML, CSS, JavaScript, Node.js, PHP, SQL, C, C++, Python</li>
+              <li>Systèmes : Windows 10/11, Windows Server 2016, Linux (Ubuntu, Arch, Kali)</li>
+              <li>Soft skills : autonome, curieux, travail d'équipe, motivé</li>
             </ul>
+            <div class="hero-links">
+              <a href="mailto:romain.charollais@gmail.com" class="link-chip">romain.charollais@gmail.com</a>
+              <a href="tel:+33659599042" class="link-chip">06 59 59 90 42</a>
+            </div>
           </aside>
         </div>
       </section>
 
-      <section class="section" id="a-propos">
+      <section class="section section-alt" id="alternance">
         <div class="container">
-          <h2>A propos</h2>
+          <h2>Ce que je cherche en alternance</h2>
           <p class="section-intro">
-            Passionne par la creation de produits numeriques utiles, je transforme
-            des idees en applications maintenables et prêtes pour la production.
+            Je recherche une alternance où je peux contribuer sur des sujets concrets (web, scripts,
+            réseau, maintenance) tout en continuant à progresser techniquement au quotidien.
           </p>
-          <div class="stats">
-            <article>
-              <h3>3+</h3>
-              <p>Annees d'experience</p>
+          <div class="alternance-grid">
+            <article class="alt-card">
+              <h3>Missions qui m'intéressent</h3>
+              <ul class="list-check">
+                <li>Développement web front/back (interfaces, APIs, base de données)</li>
+                <li>Scripting et automatisation (Bash, Python, C++)</li>
+                <li>Maintenance et support informatique</li>
+                <li>Travail d'équipe avec montée en compétence continue</li>
+              </ul>
             </article>
-            <article>
-              <h3>20+</h3>
-              <p>Projets livres</p>
-            </article>
-            <article>
-              <h3>99%</h3>
-              <p>Taux de satisfaction client</p>
+            <article class="alt-card alt-card-accent">
+              <h3>Disponibilité</h3>
+              <p class="alt-big">Disponible dès maintenant</p>
+              <p class="muted">
+                Localisation : Montpellier, France. Contact direct par mail ou téléphone.
+              </p>
+              <a class="btn btn-primary btn-block" href="#contact">Proposer un entretien</a>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section class="section" id="parcours">
+        <div class="container">
+          <h2>Parcours</h2>
+          <p class="section-intro">
+            Mon parcours de formation et d'expérience professionnelle en informatique.
+          </p>
+          <ol class="timeline">
+            <li>
+              <span class="timeline-year">2024 - 2026</span>
+              <strong>BTS CIEL</strong> — Lycée Turgot, Limoges.
+            </li>
+            <li>
+              <span class="timeline-year">2024 - 2026</span>
+              <strong>BAC SN RISC</strong> — Lycée Maryse Bastié, Limoges.
+            </li>
+            <li>
+              <span class="timeline-year">Mai - Juillet 2025</span>
+              <strong>Stage chez LEAIM 23</strong> — réorganisation réseau, appli web de gestion de parc et script C++.
+            </li>
+          </ol>
         </div>
       </section>
 
       <section class="section" id="competences">
         <div class="container">
-          <h2>Competences</h2>
+          <h2>Compétences</h2>
+          <p class="section-intro">
+            Compétences acquises en formation, en stage et sur mes projets personnels.
+          </p>
           <div class="skills-grid">
             <article class="card">
               <h3>Frontend</h3>
-              <p>Interfaces responsives, accessibilite, animations, architecture composant.</p>
-              <span>React, Next.js, Tailwind, TypeScript</span>
+              <p>Création d'interfaces web, pages responsives et intégration côté client.</p>
+              <span>HTML, CSS, JavaScript</span>
             </article>
             <article class="card">
               <h3>Backend</h3>
-              <p>APIs REST et GraphQL, securite, logique metier, tests automatises.</p>
-              <span>Node.js, Express, FastAPI, JWT</span>
+              <p>Développement de logique serveur et scripts utilitaires.</p>
+              <span>Node.js, PHP, Python, C, C++</span>
             </article>
             <article class="card">
-              <h3>Base de donnees</h3>
-              <p>Modelisation, optimisation de requetes et gestion de donnees a grande echelle.</p>
-              <span>PostgreSQL, MongoDB, Prisma, Redis</span>
+              <h3>Données</h3>
+              <p>Manipulation de données et création de requêtes pour applications web.</p>
+              <span>SQL</span>
             </article>
             <article class="card">
-              <h3>DevOps</h3>
-              <p>Automatisation du deploiement et supervision applicative.</p>
-              <span>Docker, GitHub Actions, Vercel, AWS</span>
+              <h3>Outils</h3>
+              <p>Environnements système, versioning et travail en équipe.</p>
+              <span>Git, Bash, Windows Server 2016, Linux (Ubuntu/Arch/Kali)</span>
             </article>
           </div>
         </div>
@@ -115,31 +154,37 @@
 
       <section class="section" id="projets">
         <div class="container">
-          <h2>Projets recents</h2>
+          <h2>Projets (école & perso)</h2>
+          <p class="section-intro">
+            Projets réalisés en autonomie pour approfondir mes compétences techniques.
+          </p>
           <div class="projects-grid">
             <article class="project">
-              <h3>Plateforme SaaS de gestion RH</h3>
+              <span class="project-tag">Projet personnel</span>
+              <h3>Jeu d'échecs en ligne (2025-2026)</h3>
               <p>
-                Conception d'une application full stack pour automatiser onboarding,
-                suivi des performances et reporting.
+                Développement d'une application web permettant à plusieurs utilisateurs de jouer
+                aux échecs en ligne, avec système de lobby et gestion des connexions.
               </p>
-              <a href="#" aria-label="Voir le projet SaaS">Voir le projet</a>
+              <a href="#" aria-label="Voir le projet jeu d'échecs">Technos : JavaScript, Node.js, SQL</a>
             </article>
             <article class="project">
-              <h3>E-commerce haute performance</h3>
+              <span class="project-tag">Projet personnel</span>
+              <h3>Logiciel de sécurisation de données (2026)</h3>
               <p>
-                Refonte complete frontend/backend avec optimisation SEO et
-                acceleration du temps de chargement.
+                Développement d'un logiciel avec interface graphique minimaliste pour sécuriser
+                des données via un système de hachage basé sur une clé utilisateur.
               </p>
-              <a href="#" aria-label="Voir le projet e-commerce">Voir le projet</a>
+              <a href="#" aria-label="Voir le projet sécurisation">Technos : C++, SHA-256</a>
             </article>
             <article class="project">
-              <h3>Dashboard analytique en temps reel</h3>
+              <span class="project-tag">Expérience pro</span>
+              <h3>Stage LEAIM 23 (2025)</h3>
               <p>
-                Creation d'un tableau de bord connecte a plusieurs sources de
-                donnees, avec visualisations interactives.
+                Participation à la réorganisation du réseau, création d'une application web de gestion
+                de parc informatique et réalisation d'un script C++ pour récupérer des données de borne de paiement.
               </p>
-              <a href="#" aria-label="Voir le dashboard">Voir le projet</a>
+              <a href="#" aria-label="Voir l'expérience de stage">Missions : réseau, dev web, maintenance matériel</a>
             </article>
           </div>
         </div>
@@ -148,19 +193,22 @@
       <section class="section contact" id="contact">
         <div class="container contact-layout">
           <div>
-            <h2>Parlons de ton projet</h2>
+            <h2>Contact</h2>
             <p>
-              Tu as une idee, une application a lancer ou une base technique a
-              moderniser ? Ecris-moi et je te reponds rapidement.
+              Je suis en recherche d'alternance en développement/informatique.
+              Vous pouvez me contacter pour échanger sur vos besoins.
+            </p>
+            <p class="contact-hint">
+              Email : <strong>romain.charollais@gmail.com</strong> · Tél : <strong>06 59 59 90 42</strong> · Montpellier
             </p>
           </div>
           <form class="contact-form">
             <label for="name">Nom</label>
             <input id="name" type="text" placeholder="Ton nom" required />
             <label for="email">Email</label>
-            <input id="email" type="email" placeholder="ton@email.com" required />
+            <input id="email" type="email" placeholder="votre@email.com" required />
             <label for="message">Message</label>
-            <textarea id="message" rows="4" placeholder="Ton besoin"></textarea>
+            <textarea id="message" rows="4" placeholder="Alternance, missions proposées, localisation..."></textarea>
             <button type="submit" class="btn btn-primary">Envoyer</button>
           </form>
         </div>
@@ -169,7 +217,7 @@
 
     <footer class="footer">
       <div class="container">
-        <p>© 2026 RDev - Portfolio Developpeur Full Stack</p>
+        <p>© 2026 — Romain Charollais · Recherche d'alternance</p>
       </div>
     </footer>
 
