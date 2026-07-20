@@ -1207,6 +1207,7 @@ body {
 /* ---------- CONTACT ---------- */
 .contact-slots {
   margin-bottom: 1.25rem;
+  grid-template-columns: 1fr 1fr;
 }
 
 .contact-slots .slot-value a {
