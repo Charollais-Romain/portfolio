@@ -1,7 +1,5 @@
 const menuToggle = document.getElementById("menuToggle");
 const menu = document.getElementById("menu");
-const contactForm = document.getElementById("contactForm");
-const formNote = document.getElementById("formNote");
 
 if (menuToggle && menu) {
   menuToggle.addEventListener("click", () => {
@@ -14,20 +12,6 @@ if (menuToggle && menu) {
       menu.classList.remove("open");
       menuToggle.setAttribute("aria-expanded", "false");
     });
-  });
-}
-
-if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const button = contactForm.querySelector('button[type="submit"]');
-    if (button) {
-      button.textContent = "Envoyé";
-      button.disabled = true;
-    }
-    if (formNote) {
-      formNote.hidden = false;
-    }
   });
 }
 

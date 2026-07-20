@@ -540,6 +540,18 @@ body {
   background: linear-gradient(160deg, rgba(139, 108, 255, 0.1), var(--ink-2) 55%);
 }
 
+.pitch-block-wide {
+  margin-top: 1rem;
+}
+
+.pitch-why {
+  margin: 0.85rem 0 1.1rem;
+}
+
+.pitch-block .btn {
+  margin-top: 0.25rem;
+}
+
 .list-check {
   list-style: none;
 }
@@ -746,6 +758,15 @@ body {
   padding: 1.25rem;
 }
 
+.skill-adapt {
+  border-color: rgba(77, 232, 212, 0.35);
+  background: linear-gradient(160deg, rgba(77, 232, 212, 0.06), var(--ink-2) 60%);
+}
+
+.skill-adapt h3 {
+  color: var(--cyan);
+}
+
 .skill h3 {
   font-family: var(--font-display);
   font-size: 1.1rem;
@@ -828,11 +849,6 @@ body {
   clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
 }
 
-.timeline li:first-child::before {
-  background: var(--magenta);
-  box-shadow: 0 0 12px rgba(255, 79, 163, 0.55);
-}
-
 .timeline-year {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -857,91 +873,123 @@ body {
   font-size: 0.9rem;
 }
 
-/* ---------- CONTACT ---------- */
-.contact {
-  border-bottom: 1px solid var(--line);
+/* Objectif actuel — BAC+3 */
+.timeline-now {
+  margin: 0 0 1.75rem;
+  padding: 1.15rem 1.25rem 1.15rem 1.4rem !important;
+  background:
+    linear-gradient(120deg, rgba(255, 79, 163, 0.14), rgba(139, 108, 255, 0.1) 45%, transparent 75%),
+    var(--ink-2);
+  border: 1px solid rgba(255, 79, 163, 0.55);
+  box-shadow:
+    0 0 28px -6px rgba(255, 79, 163, 0.55),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  animation: now-glow 2.4s ease-in-out infinite;
 }
 
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 2.5rem;
-  align-items: start;
+.timeline-now::before {
+  left: -6px;
+  top: 1.45rem;
+  width: 10px;
+  height: 10px;
+  background: var(--magenta);
+  box-shadow: 0 0 14px 2px rgba(255, 79, 163, 0.85);
+  z-index: 1;
 }
 
-.contact-copy p {
+.timeline-now .timeline-year {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--magenta);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--magenta);
+  box-shadow: 0 0 0 0 rgba(255, 79, 163, 0.7);
+  animation: pulse-ring 1.8s ease-out infinite;
+  flex-shrink: 0;
+}
+
+.timeline-now strong {
+  font-size: 1.28rem;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  text-shadow: 0 0 24px rgba(255, 79, 163, 0.35);
+}
+
+.timeline-now p {
   color: var(--mist);
-  max-width: 28rem;
-  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
 }
 
-.contact-direct {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+@keyframes now-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 22px -8px rgba(255, 79, 163, 0.45),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  }
+  50% {
+    box-shadow:
+      0 0 36px -4px rgba(255, 79, 163, 0.75),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
 }
 
-.contact-direct a {
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 79, 163, 0.65);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 79, 163, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 79, 163, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-now,
+  .timeline-pulse {
+    animation: none !important;
+  }
+}
+
+/* ---------- CONTACT ---------- */
+.contact-slots {
+  margin-bottom: 1.25rem;
+}
+
+.contact-slots .slot-value a {
   color: var(--white);
   text-decoration: none;
   font-weight: 500;
+  word-break: break-all;
 }
 
-.contact-direct a:hover {
+.contact-slots .slot-value a:hover {
   color: var(--cyan);
 }
 
-.contact-form {
-  background: var(--ink-2);
-  border: 1px solid var(--line);
-  padding: 1.35rem;
-  display: grid;
-  gap: 0.45rem;
+.contact-grid {
+  margin-top: 0;
 }
 
-.contact-form label {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.contact-accent-text {
   color: var(--muted);
-  margin-top: 0.35rem;
+  font-size: 0.92rem;
+  margin-bottom: 0.25rem;
 }
 
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  background: var(--ink);
-  border: 1px solid var(--line);
-  color: var(--white);
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  padding: 0.85rem 1rem;
-  outline: none;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #4b5364;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: var(--violet);
-  box-shadow: 0 0 0 3px rgba(139, 108, 255, 0.2);
-}
-
-.contact-form .btn {
-  margin-top: 0.75rem;
-}
-
-.form-note {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--cyan);
-  margin-top: 0.5rem;
+.pitch-block .muted {
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 /* ---------- PLACEHOLDERS (cases à remplir) ---------- */
@@ -998,7 +1046,6 @@ li[data-placeholder="true"] {
 @media (max-width: 900px) {
   .hero-layout,
   .pitch-grid,
-  .contact-layout,
   .skills,
   .projects,
   .slots {
