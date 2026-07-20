@@ -53,32 +53,42 @@
       <!-- HERO -->
       <section class="hero" id="accueil">
         <div class="container hero-layout">
+          <figure class="hero-portrait">
+            <div class="portrait-shell">
+              <img
+                src="/assets/rendu-tete-pro.jpeg"
+                alt="Portrait de Romain Charollais"
+                width="480"
+                height="480"
+              />
+            </div>
+            <span class="portrait-node" aria-hidden="true"></span>
+          </figure>
+
           <div class="hero-content">
-            <p class="eyebrow reveal">Alternance · EPSI Montpellier · Rentrée 2026</p>
-            <h1 class="reveal reveal-delay-1">
-              Romain Charollais
-            </h1>
-            <p class="hero-lead reveal reveal-delay-2">
+            <p class="eyebrow">Alternance · EPSI Montpellier · Rentrée 2026</p>
+            <h1>Romain Charollais</h1>
+            <p class="hero-lead">
               Je recherche principalement une <strong>alternance Développeur fullstack</strong> pour intégrer
               le <strong>BAC+3 à EPSI Montpellier</strong>.
             </p>
-            <p class="hero-sub reveal reveal-delay-3">
+            <p class="hero-sub">
               En fin de BTS CIEL, je construis des applis web concrètes et je vise le développement
               fullstack en priorité. Ouvert aussi à la <strong>cybersécurité</strong>, l’<strong>IA</strong>
               et le <strong>réseau</strong> — tant que c’est de l’informatique et que je progresse sur du concret.
             </p>
-            <div class="hero-actions reveal reveal-delay-4">
+            <div class="hero-actions">
               <a class="btn btn-primary" href="#contact">Me contacter</a>
               <a class="btn btn-secondary" href="#projets">Voir les projets</a>
             </div>
-            <ul class="hero-meta reveal reveal-delay-5">
+            <ul class="hero-meta">
               <li><span class="meta-key">Lieu</span> Montpellier / agglo</li>
               <li><span class="meta-key">Contrat</span> Apprentissage ou pro</li>
               <li><span class="meta-key">Dispo</span> Dès maintenant</li>
             </ul>
           </div>
 
-          <aside class="hero-panel reveal reveal-delay-2">
+          <aside class="hero-panel">
             <div class="panel-top">
               <span class="panel-dot" aria-hidden="true"></span>
               <span class="panel-label">Profil</span>
@@ -105,10 +115,9 @@
               <a href="mailto:romain.charollais87@gmail.com">romain.charollais87@gmail.com</a>
               <a href="tel:+33659599042">06 59 59 90 42</a>
             </div>
-            <!-- Placeholder LinkedIn / GitHub — à remplir -->
             <div class="panel-social">
-              <a href="#" class="social-link" data-placeholder="true">GitHub</a>
-              <a href="#" class="social-link" data-placeholder="true">LinkedIn</a>
+              <a href="https://github.com/Charollais-Romain" class="social-link" >GitHub</a>
+              <a href="https://www.linkedin.com/in/romain-charollais" class="social-link" >LinkedIn</a>
               <a href="#" class="social-link" data-placeholder="true">CV PDF</a>
             </div>
           </aside>
@@ -239,29 +248,33 @@
                   <span>PostgreSQL</span>
                   <span>Docker</span>
                 </div>
-                <div class="project-links">
-                  <a href="#" data-placeholder="true">Démo →</a>
-                  <a href="#" data-placeholder="true">Repo →</a>
-                </div>
               </div>
-              <div class="project-visual" aria-hidden="true">
-                <svg viewBox="0 0 220 280" fill="none">
-                  <line x1="110" y1="280" x2="110" y2="200" stroke="#232B3D" stroke-width="2" />
-                  <line x1="110" y1="240" x2="150" y2="240" stroke="#232B3D" stroke-width="2" />
-                  <line x1="110" y1="200" x2="110" y2="140" stroke="#8B6CFF" stroke-width="2" />
-                  <line x1="110" y1="170" x2="70" y2="170" stroke="#8B6CFF" stroke-width="2" />
-                  <circle cx="70" cy="170" r="4" fill="#8B6CFF" />
-                  <line x1="110" y1="140" x2="110" y2="80" stroke="#8B6CFF" stroke-width="2" />
-                  <line x1="110" y1="110" x2="150" y2="110" stroke="#8B6CFF" stroke-width="2" />
-                  <circle cx="150" cy="110" r="7" fill="#8B6CFF" />
-                  <line x1="110" y1="80" x2="110" y2="50" stroke="#8B6CFF" stroke-width="2.5" />
-                  <polygon points="110,10 132,32 126,58 94,58 88,32" fill="#8B6CFF" />
-                  <polygon points="110,10 132,32 110,44" fill="#A98CFF" />
-                  <polygon points="88,32 110,10 110,44" fill="#7A57F0" />
-                  <polygon points="126,58 132,32 110,44" fill="#6F49E8" />
-                  <polygon points="94,58 88,32 110,44" fill="#9678FF" />
-                  <circle cx="110" cy="44" r="6" fill="#FF4FA3" />
-                </svg>
+              <div class="project-demo">
+                <button
+                  type="button"
+                  class="demo-toggle"
+                  id="volubileDemoToggle"
+                  aria-expanded="false"
+                  aria-controls="volubileDemoPanel"
+                >
+                  <span class="demo-toggle-label">Voir un exemple</span>
+                  <span class="demo-toggle-icon" aria-hidden="true"></span>
+                </button>
+                <div class="demo-panel" id="volubileDemoPanel" hidden>
+                  <video
+                    id="volubileDemoVideo"
+                    class="demo-video"
+                    muted
+                    playsinline
+                    loop
+                    preload="metadata"
+                    disablepictureinpicture
+                    disableremoteplayback
+                  >
+                    <source src="/assets/Volubile_Proto.mp4" type="video/mp4" />
+                  </video>
+                  <p class="demo-caption">Exemple de partie — proximité, classement et liane</p>
+                </div>
               </div>
             </article>
 
@@ -274,14 +287,10 @@
               <ul class="project-points">
                 <li>Architecture client / serveur</li>
                 <li>Gestion d’état de partie et de salles</li>
-                <li data-placeholder="true">Détail technique / lien — à remplir</li>
               </ul>
               <div class="project-tech">
                 <span>JavaScript</span>
                 <span>Node.js</span>
-              </div>
-              <div class="project-links">
-                <a href="#" data-placeholder="true">Repo →</a>
               </div>
             </article>
 
@@ -299,14 +308,11 @@
                 <span>C++</span>
                 <span>SHA-256</span>
               </div>
-              <div class="project-links">
-                <a href="#" data-placeholder="true">Repo →</a>
-              </div>
             </article>
 
             <article class="project">
               <span class="badge badge-cold">Expérience pro</span>
-              <h3>Stage AIM 23 — LEAIM (2025)</h3>
+              <h3>Stage AIM 23 (2025)</h3>
               <p>
                 Réorganisation réseau, application web de gestion de parc, script C++ pour bornes de paiement.
               </p>
@@ -428,7 +434,7 @@
             </li>
             <li>
               <span class="timeline-year">Mai — Juillet 2025</span>
-              <strong>Stage AIM 23 (LEAIM)</strong>
+              <strong>Stage AIM 23</strong>
               <p>Réseau, appli web de gestion de parc, script C++ bornes de paiement.</p>
             </li>
             <li>

@@ -143,13 +143,13 @@ body {
   position: relative;
   padding: 5.5rem 0 4.5rem;
   border-bottom: 1px solid var(--line);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 1.35fr 0.9fr;
-  gap: 3rem;
+  grid-template-columns: minmax(260px, 320px) 1.2fr 0.85fr;
+  gap: 2rem;
   align-items: start;
 }
 
@@ -161,6 +161,61 @@ body {
   color: var(--cyan);
   margin-bottom: 1.1rem;
   display: block;
+  transition: color 0.35s ease;
+}
+
+.hero-portrait {
+  position: relative;
+  margin: 0;
+  width: 100%;
+}
+
+.portrait-shell {
+  position: relative;
+  padding: 2px;
+  background: linear-gradient(145deg, var(--cyan) 0%, var(--violet) 52%, var(--magenta) 100%);
+  clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px);
+  box-shadow: 0 0 36px -10px rgba(139, 108, 255, 0.6);
+}
+
+.portrait-shell img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 18%;
+  clip-path: polygon(21px 0, 100% 0, 100% 100%, 0 100%, 0 21px);
+  background: var(--ink-2);
+}
+
+.portrait-node {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  width: 14px;
+  height: 14px;
+  background: var(--magenta);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  box-shadow: 0 0 16px rgba(255, 79, 163, 0.8);
+  z-index: 2;
+}
+
+.hero-content {
+  padding: 1.1rem 1.2rem;
+  border: 1px solid transparent;
+  background: transparent;
+  transition:
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+.hero-content:hover {
+  border-color: rgba(139, 108, 255, 0.4);
+  background: linear-gradient(160deg, rgba(139, 108, 255, 0.08), transparent 70%);
+  box-shadow: 0 0 0 1px rgba(77, 232, 212, 0.08);
+  transform: translateY(-3px);
 }
 
 .hero h1 {
@@ -171,6 +226,11 @@ body {
   letter-spacing: -0.02em;
   line-height: 1.05;
   margin-bottom: 1rem;
+  transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+.hero-content:hover h1 {
+  text-shadow: 0 0 28px rgba(139, 108, 255, 0.35);
 }
 
 .hero-lead {
@@ -178,6 +238,11 @@ body {
   color: var(--mist);
   max-width: 36rem;
   margin-bottom: 0.75rem;
+  transition: color 0.35s ease;
+}
+
+.hero-content:hover .hero-lead {
+  color: var(--white);
 }
 
 .hero-lead strong {
@@ -189,6 +254,15 @@ body {
   color: var(--muted);
   max-width: 34rem;
   font-size: 0.98rem;
+  transition: color 0.35s ease;
+}
+
+.hero-content:hover .hero-sub {
+  color: var(--mist);
+}
+
+.hero-content:hover .eyebrow {
+  color: var(--violet-soft);
 }
 
 .hero-actions {
@@ -206,6 +280,11 @@ body {
   gap: 1.25rem 1.75rem;
   padding-top: 1.25rem;
   border-top: 1px solid var(--line);
+  transition: border-color 0.35s ease;
+}
+
+.hero-content:hover .hero-meta {
+  border-top-color: rgba(139, 108, 255, 0.35);
 }
 
 .hero-meta li {
@@ -271,8 +350,7 @@ body {
 /* reveals */
 .reveal {
   opacity: 0;
-  transform: translateY(14px);
-  animation: reveal-up 0.7s ease forwards;
+  animation: reveal-fade 0.7s ease forwards;
 }
 
 .reveal-delay-1 {
@@ -291,10 +369,9 @@ body {
   animation-delay: 0.4s;
 }
 
-@keyframes reveal-up {
+@keyframes reveal-fade {
   to {
     opacity: 1;
-    transform: none;
   }
 }
 
@@ -349,6 +426,16 @@ body {
   background: var(--ink-2);
   border: 1px solid var(--line);
   padding: 1.35rem 1.4rem;
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+.hero-panel:hover {
+  border-color: rgba(77, 232, 212, 0.4);
+  box-shadow: 0 0 28px -12px rgba(77, 232, 212, 0.35);
+  transform: translateY(-3px);
 }
 
 .panel-top {
@@ -657,15 +744,105 @@ body {
 .project-featured {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 1.4fr 0.7fr;
-  gap: 1.5rem;
-  align-items: center;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
   border-color: rgba(139, 108, 255, 0.35);
   background: linear-gradient(120deg, rgba(139, 108, 255, 0.08), var(--ink-2) 50%);
 }
 
 .project-featured:hover {
   box-shadow: 0 0 28px -10px rgba(255, 79, 163, 0.35);
+}
+
+.project-demo {
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--ink);
+  overflow: hidden;
+}
+
+.demo-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.85rem 1rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--white);
+  font-family: var(--font-body);
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.demo-toggle:hover {
+  background: rgba(139, 108, 255, 0.08);
+}
+
+.demo-toggle-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--cyan);
+}
+
+.demo-toggle-hint {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.demo-toggle-icon {
+  margin-left: auto;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--violet);
+  border-bottom: 2px solid var(--violet);
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.demo-toggle[aria-expanded="true"] .demo-toggle-icon {
+  transform: rotate(-135deg);
+  margin-top: 4px;
+}
+
+.demo-toggle[aria-expanded="true"] .demo-toggle-label {
+  color: var(--magenta);
+}
+
+.demo-panel {
+  border-top: 1px solid var(--line);
+}
+
+.demo-panel[hidden] {
+  display: none;
+}
+
+.demo-video {
+  display: block;
+  width: 100%;
+  max-height: 480px;
+  background: #000;
+  pointer-events: none; /* comme un GIF : pas de barre / pas de son */
+  user-select: none;
+}
+
+.demo-caption {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.65rem 0.9rem;
+  border-top: 1px solid var(--line);
+  margin: 0;
 }
 
 .project h3 {
@@ -1052,12 +1229,12 @@ li[data-placeholder="true"] {
     grid-template-columns: 1fr;
   }
 
-  .project-featured {
-    grid-template-columns: 1fr;
+  .hero-portrait {
+    max-width: 280px;
   }
 
-  .project-visual {
-    order: -1;
+  .project-featured {
+    grid-template-columns: 1fr;
   }
 
   .hero-vine {
@@ -1107,9 +1284,16 @@ li[data-placeholder="true"] {
   .reveal,
   .vine-bloom,
   .vine-node,
-  .will-reveal {
+  .will-reveal,
+  .hero-portrait,
+  .hero-content,
+  .hero-panel {
     animation: none !important;
     transition: none !important;
+  }
+
+  .reveal,
+  .will-reveal {
     opacity: 1 !important;
     transform: none !important;
   }

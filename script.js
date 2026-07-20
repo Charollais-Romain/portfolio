@@ -36,3 +36,46 @@ if ("IntersectionObserver" in window && observeTargets.length) {
     io.observe(el);
   });
 }
+
+/* Volubile demo : déplier → lecture muette façon GIF ; replier → pause */
+const demoToggle = document.getElementById("volubileDemoToggle");
+const demoPanel = document.getElementById("volubileDemoPanel");
+const demoVideo = document.getElementById("volubileDemoVideo");
+
+function forceMute(video) {
+  video.muted = true;
+  video.defaultMuted = true;
+  video.volume = 0;
+  video.setAttribute("muted", "");
+}
+
+if (demoToggle && demoPanel && demoVideo) {
+  forceMute(demoVideo);
+
+  /* Empêche tout déblocage du son (clic, raccourcis, etc.) */
+  demoVideo.addEventListener("volumechange", () => forceMute(demoVideo));
+  demoVideo.addEventListener("play", () => forceMute(demoVideo));
+
+  demoToggle.addEventListener("click", async () => {
+    const willOpen = demoToggle.getAttribute("aria-expanded") !== "true";
+    demoToggle.setAttribute("aria-expanded", String(willOpen));
+    demoPanel.hidden = !willOpen;
+
+    const label = demoToggle.querySelector(".demo-toggle-label");
+
+    if (willOpen) {
+      if (label) label.textContent = "Masquer l’exemple";
+      forceMute(demoVideo);
+      try {
+        demoVideo.currentTime = 0;
+        await demoVideo.play();
+      } catch {
+        /* rare : navigateur bloque même le muet */
+      }
+    } else {
+      if (label) label.textContent = "Voir un exemple";
+      demoVideo.pause();
+      demoVideo.currentTime = 0;
+    }
+  });
+}
