@@ -3,235 +3,448 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | Romain Charollais — Alternance EPSI Montpellier (BAC+5)</title>
+    <title>Romain Charollais — Alternance Développeur fullstack · EPSI Montpellier</title>
     <meta
       name="description"
-      content="Romain Charollais recherche une alternance à Montpellier pour intégrer le cursus ingénieur BAC+5 à EPSI Montpellier."
+      content="Romain Charollais, développeur en formation. Recherche une alternance BAC+3 Développeur fullstack à EPSI Montpellier. Projets web, Node.js, C++."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="page-grid" aria-hidden="true"></div>
+
     <header class="header">
       <div class="container nav">
-        <a class="logo" href="#accueil">Romain<span>.</span>dev</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+        <a class="logo" href="#accueil">
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 140 140" fill="none" aria-hidden="true">
+            <line x1="70" y1="140" x2="70" y2="86" stroke="currentColor" class="logo-stem" stroke-width="8" />
+            <line x1="70" y1="120" x2="40" y2="120" stroke="currentColor" class="logo-stem" stroke-width="8" />
+            <line x1="70" y1="104" x2="96" y2="104" stroke="currentColor" class="logo-stem" stroke-width="8" />
+            <polygon points="70,20 95,45 88,78 52,78 45,45" fill="#8B6CFF" opacity="0.9" />
+            <polygon points="70,20 95,45 70,58" fill="#A98CFF" />
+            <polygon points="45,45 70,20 70,58" fill="#7A57F0" />
+            <polygon points="88,78 95,45 70,58" fill="#6F49E8" />
+            <polygon points="52,78 45,45 70,58" fill="#9678FF" />
+            <circle cx="70" cy="58" r="7" fill="#FF4FA3" />
+          </svg>
+          <span class="logo-text">Romain<span class="logo-dot">.</span>dev</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
         <nav class="menu" id="menu">
           <a href="#accueil">Accueil</a>
           <a href="#alternance">Alternance</a>
-          <a href="#parcours">Parcours</a>
-          <a href="#competences">Compétences</a>
           <a href="#projets">Projets</a>
+          <a href="#competences">Stack</a>
+          <a href="#parcours">Parcours</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
 
-    <main id="accueil">
-      <section class="hero">
-        <div class="container hero-grid">
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="accueil">
+        <div class="container hero-layout">
           <div class="hero-content">
-            <p class="badge badge-pulse">Alternance pour EPSI Montpellier · BAC+5</p>
-            <h1>Je recherche une alternance en Informatique à Montpellier pour mon cursus BAC+5 à EPSI</h1>
-            <p>
-              Passionné par l'informatique depuis mon plus jeune âge, je cherche une entreprise
-              partenaire pour une alternance dans le cadre de mon entrée à l'<strong>école d'ingénieur EPSI Montpellier</strong>
-              (niveau <strong>BAC+5</strong>). Je veux contribuer sur du concret tout en progressant au quotidien.
+            <p class="eyebrow reveal">Alternance · EPSI Montpellier · Rentrée 2026</p>
+            <h1 class="reveal reveal-delay-1">
+              Romain Charollais
+            </h1>
+            <p class="hero-lead reveal reveal-delay-2">
+              Je recherche une <strong>alternance Développeur fullstack</strong> pour intégrer
+              le <strong>BAC+3 à EPSI Montpellier</strong>.
             </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#alternance">Mon profil alternance</a>
-              <a class="btn btn-secondary" href="#projets">Mes projets</a>
+            <p class="hero-sub reveal reveal-delay-3">
+              En fin de BTS CIEL, je construis des applis web concrètes (lobby temps réel, outils métier)
+              et je veux progresser en entreprise sur du vrai produit.
+            </p>
+            <div class="hero-actions reveal reveal-delay-4">
+              <a class="btn btn-primary" href="#contact">Me contacter</a>
+              <a class="btn btn-secondary" href="#projets">Voir les projets</a>
             </div>
-            <p class="hero-note">
-              <strong>Montpellier</strong> · Alternance liée au contrat d'apprentissage ou de professionnalisation EPSI · Disponible pour échanger rapidement.
-            </p>
-          </div>
-          <aside class="hero-card">
-            <h2>En ce moment</h2>
-            <ul>
-              <li>Objectif : <span class="highlight">Alternance EPSI Montpellier — cursus ingénieur BAC+5</span></li>
-              <li>Formation actuelle : <span class="highlight">BTS CIEL (2024-2026), Lycée Turgot</span></li>
-              <li>Compétences techniques : HTML, CSS, JavaScript, Node.js, PHP, SQL, C, C++, Python</li>
-              <li>Systèmes : Windows 10/11, Windows Server 2016, Linux (Ubuntu, Arch, Kali)</li>
-              <li>Soft skills : autonome, curieux, travail d'équipe, motivé</li>
+            <ul class="hero-meta reveal reveal-delay-5">
+              <li><span class="meta-key">Lieu</span> Montpellier / agglo</li>
+              <li><span class="meta-key">Contrat</span> Apprentissage ou pro</li>
+              <li><span class="meta-key">Dispo</span> Dès maintenant</li>
             </ul>
-            <div class="hero-links">
-              <a href="mailto:romain.charollais87@gmail.com" class="link-chip">romain.charollais87@gmail.com</a>
-              <a href="tel:+33659599042" class="link-chip">06 59 59 90 42</a>
+          </div>
+
+          <aside class="hero-panel reveal reveal-delay-2">
+            <div class="panel-top">
+              <span class="panel-dot" aria-hidden="true"></span>
+              <span class="panel-label">Profil</span>
+            </div>
+            <dl class="panel-facts">
+              <div>
+                <dt>Objectif</dt>
+                <dd>Alternance BAC+3 Développeur fullstack — EPSI Montpellier</dd>
+              </div>
+              <div>
+                <dt>Formation actuelle</dt>
+                <dd>BTS CIEL (2024–2026) · Lycée Turgot, Limoges</dd>
+              </div>
+              <div>
+                <dt>Stack</dt>
+                <dd>HTML · CSS · JS · Node.js · PHP · SQL · Python · C / C++</dd>
+              </div>
+              <div>
+                <dt>Systèmes</dt>
+                <dd>Windows · Linux (Ubuntu, Arch, Kali) · Windows Server</dd>
+              </div>
+            </dl>
+            <div class="panel-contact">
+              <a href="mailto:romain.charollais87@gmail.com">romain.charollais87@gmail.com</a>
+              <a href="tel:+33659599042">06 59 59 90 42</a>
+            </div>
+            <!-- Placeholder LinkedIn / GitHub — à remplir -->
+            <div class="panel-social">
+              <a href="#" class="social-link" data-placeholder="true">GitHub</a>
+              <a href="#" class="social-link" data-placeholder="true">LinkedIn</a>
+              <a href="#" class="social-link" data-placeholder="true">CV PDF</a>
             </div>
           </aside>
         </div>
+
+        <div class="hero-vine" aria-hidden="true">
+          <svg viewBox="0 0 80 420" fill="none">
+            <line x1="40" y1="420" x2="40" y2="320" stroke="#232B3D" stroke-width="2" />
+            <line x1="40" y1="380" x2="18" y2="380" stroke="#232B3D" stroke-width="2" />
+            <line x1="40" y1="320" x2="40" y2="220" stroke="#8B6CFF" stroke-width="2" class="vine-grow" />
+            <line x1="40" y1="280" x2="62" y2="280" stroke="#8B6CFF" stroke-width="2" class="vine-grow" />
+            <circle cx="62" cy="280" r="4" fill="#8B6CFF" class="vine-node" />
+            <line x1="40" y1="220" x2="40" y2="120" stroke="#8B6CFF" stroke-width="2" class="vine-grow" />
+            <line x1="40" y1="170" x2="18" y2="170" stroke="#8B6CFF" stroke-width="2" class="vine-grow" />
+            <circle cx="18" cy="170" r="6" fill="#8B6CFF" class="vine-node" />
+            <line x1="40" y1="120" x2="40" y2="70" stroke="#8B6CFF" stroke-width="2.5" class="vine-grow" />
+            <g class="vine-bloom">
+              <polygon points="40,20 58,40 52,64 28,64 22,40" fill="#8B6CFF" />
+              <polygon points="40,20 58,40 40,50" fill="#A98CFF" />
+              <polygon points="22,40 40,20 40,50" fill="#7A57F0" />
+              <polygon points="52,64 58,40 40,50" fill="#6F49E8" />
+              <polygon points="28,64 22,40 40,50" fill="#9678FF" />
+              <circle cx="40" cy="50" r="5" fill="#FF4FA3" />
+            </g>
+          </svg>
+        </div>
       </section>
 
-      <section class="section section-alt" id="alternance">
+      <!-- ALTERNANCE -->
+      <section class="section" id="alternance">
         <div class="container">
-          <h2>Alternance pour EPSI Montpellier (BAC+5)</h2>
-          <p class="section-intro">
-            L'alternance que je recherche n'est pas un simple stage : elle est nécessaire pour intégrer
-            le <strong>cursus ingénieur en BAC+5 à EPSI Montpellier</strong>. Je cherche donc une entreprise
-            prête à m'accompagner sur la durée du cycle, avec un rythme compatible école / entreprise.
-          </p>
-          <div class="epsi-banner">
-            <p class="epsi-label">École visée</p>
-            <p class="epsi-title">EPSI Montpellier — École d'ingénierie informatique</p>
-            <p class="epsi-detail">Niveau visé : BAC+5 · Contrat d'alternance (apprentissage ou professionnalisation)</p>
+          <header class="sec-head">
+            <span class="sec-num">01</span>
+            <h2>Ce que je recherche</h2>
+            <span class="sec-sub">Cadre EPSI · BAC+3</span>
+          </header>
+
+          <div class="pitch-banner">
+            <p class="pitch-label">Formation visée</p>
+            <p class="pitch-title">EPSI Montpellier — BAC+3 Développeur fullstack</p>
+            <p class="pitch-detail">Titre RNCP niveau 6 · Contrat d’apprentissage ou de professionnalisation</p>
           </div>
-          <div class="alternance-grid">
-            <article class="alt-card">
-              <h3>Missions qui m'intéressent</h3>
+
+          <div class="pitch-grid">
+            <article class="pitch-block">
+              <h3>Missions ciblées</h3>
               <ul class="list-check">
-                <li>Développement web front/back (interfaces, APIs, base de données)</li>
-                <li>Scripting et automatisation (Bash, Python, C++)</li>
-                <li>Développement de logiciels (C++, Python, Java)</li>
-                <li>Administration réseau (DHCP, DNS, VPN, etc.)</li>
-                <li>Maintenance et support informatique</li>
-                <li>Travail d'équipe avec montée en compétence continue</li>
+                <li>Développement fullstack (front, back, APIs, bases de données)</li>
+                <li>Conception et évolution d’applications web</li>
+                <li>Scripting &amp; automatisation (Python, Bash)</li>
+                <li>Méthodes agiles et intégration continue</li>
+                <li>Travail en équipe, code review, montée en compétence</li>
               </ul>
             </article>
-            <article class="alt-card alt-card-accent">
-              <h3>Cadre EPSI & disponibilité</h3>
-              <p class="alt-big">Alternance Montpellier / agglo</p>
-              <p class="muted">
-                Recherche active pour une mission en lien avec le programme ingénieur EPSI (dev, réseau, systèmes).
-                Basé à Montpellier — contact par mail ou téléphone.
-              </p>
+            <article class="pitch-block pitch-block-accent">
+              <h3>Pourquoi me prendre</h3>
+              <ul class="list-check">
+                <li>Autonome : projets perso poussés jusqu’au bout</li>
+                <li>Curieux : j’apprends vite sur du concret</li>
+                <li>Expérience terrain : stage réseau + appli métier</li>
+                <li>Basé à Montpellier, disponible rapidement</li>
+              </ul>
               <a class="btn btn-primary btn-block" href="#contact">Proposer un entretien</a>
+            </article>
+          </div>
+
+          <div class="slots">
+            <div class="slot">
+              <span class="slot-label">Rythme école / entreprise</span>
+              <p class="slot-value" data-placeholder="true">À préciser selon calendrier EPSI</p>
+            </div>
+            <div class="slot">
+              <span class="slot-label">Durée du contrat</span>
+              <p class="slot-value" data-placeholder="true">Ex. 12 mois — à confirmer</p>
+            </div>
+            <div class="slot">
+              <span class="slot-label">Mobilité</span>
+              <p class="slot-value">Montpellier et agglomération · télétravail partiel OK</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJETS -->
+      <section class="section section-lined" id="projets">
+        <div class="container">
+          <header class="sec-head">
+            <span class="sec-num">02</span>
+            <h2>Projets</h2>
+            <span class="sec-sub">Preuves concrètes</span>
+          </header>
+          <p class="sec-intro">
+            Des réalisations que je peux expliquer en entretien : architecture, choix techniques, difficultés.
+          </p>
+
+          <div class="projects">
+            <article class="project project-featured">
+              <div class="project-body">
+                <span class="badge badge-hot">En cours · DA &amp; produit</span>
+                <h3>Ipomée</h3>
+                <p>
+                  Jeu de mots en ligne inspiré de Semantle : chaque proposition rapproche la liane du mot secret.
+                  Direction artistique complète (palette, typo, signature visuelle) et logique de proximité / classement.
+                </p>
+                <ul class="project-points">
+                  <li>Système visuel « fleur + circuit » (liane qui grimpe, fleur à la victoire)</li>
+                  <li>UI de température et paliers de proximité</li>
+                  <li><!-- À compléter : stack exacte, lien démo / repo --></li>
+                </ul>
+                <div class="project-tech">
+                  <span>Direction artistique</span>
+                  <span>HTML / CSS / JS</span>
+                  <span data-placeholder="true">Stack backend — à remplir</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" data-placeholder="true">Démo →</a>
+                  <a href="#" data-placeholder="true">Repo →</a>
+                </div>
+              </div>
+              <div class="project-visual" aria-hidden="true">
+                <svg viewBox="0 0 220 280" fill="none">
+                  <line x1="110" y1="280" x2="110" y2="200" stroke="#232B3D" stroke-width="2" />
+                  <line x1="110" y1="240" x2="150" y2="240" stroke="#232B3D" stroke-width="2" />
+                  <line x1="110" y1="200" x2="110" y2="140" stroke="#8B6CFF" stroke-width="2" />
+                  <line x1="110" y1="170" x2="70" y2="170" stroke="#8B6CFF" stroke-width="2" />
+                  <circle cx="70" cy="170" r="4" fill="#8B6CFF" />
+                  <line x1="110" y1="140" x2="110" y2="80" stroke="#8B6CFF" stroke-width="2" />
+                  <line x1="110" y1="110" x2="150" y2="110" stroke="#8B6CFF" stroke-width="2" />
+                  <circle cx="150" cy="110" r="7" fill="#8B6CFF" />
+                  <line x1="110" y1="80" x2="110" y2="50" stroke="#8B6CFF" stroke-width="2.5" />
+                  <polygon points="110,10 132,32 126,58 94,58 88,32" fill="#8B6CFF" />
+                  <polygon points="110,10 132,32 110,44" fill="#A98CFF" />
+                  <polygon points="88,32 110,10 110,44" fill="#7A57F0" />
+                  <polygon points="126,58 132,32 110,44" fill="#6F49E8" />
+                  <polygon points="94,58 88,32 110,44" fill="#9678FF" />
+                  <circle cx="110" cy="44" r="6" fill="#FF4FA3" />
+                </svg>
+              </div>
+            </article>
+
+            <article class="project">
+              <span class="badge badge-mid">Projet personnel</span>
+              <h3>Jeu d’échecs en ligne</h3>
+              <p>
+                Application web multi-joueurs : lobby, gestion des connexions et parties en temps réel.
+              </p>
+              <ul class="project-points">
+                <li>Architecture client / serveur</li>
+                <li>Gestion d’état de partie et de salles</li>
+                <li data-placeholder="true">Détail technique / lien — à remplir</li>
+              </ul>
+              <div class="project-tech">
+                <span>JavaScript</span>
+                <span>Node.js</span>
+              </div>
+              <div class="project-links">
+                <a href="#" data-placeholder="true">Repo →</a>
+              </div>
+            </article>
+
+            <article class="project">
+              <span class="badge badge-mid">Projet personnel</span>
+              <h3>Sécurisation de données</h3>
+              <p>
+                Logiciel desktop à interface minimaliste : hachage basé sur une clé utilisateur (SHA-256).
+              </p>
+              <ul class="project-points">
+                <li>C++ et crypto appliquée</li>
+                <li>UX sobre, orientée utilitaire</li>
+              </ul>
+              <div class="project-tech">
+                <span>C++</span>
+                <span>SHA-256</span>
+              </div>
+              <div class="project-links">
+                <a href="#" data-placeholder="true">Repo →</a>
+              </div>
+            </article>
+
+            <article class="project">
+              <span class="badge badge-cold">Expérience pro</span>
+              <h3>Stage AIM 23 — LEAIM (2025)</h3>
+              <p>
+                Réorganisation réseau, application web de gestion de parc, script C++ pour bornes de paiement.
+              </p>
+              <ul class="project-points">
+                <li>Réseau (restructuration, maintenance)</li>
+                <li>Dev web métier (gestion de parc)</li>
+                <li>Scripting C++ sur matériel terrain</li>
+              </ul>
+              <div class="project-tech">
+                <span>Réseau</span>
+                <span>Web</span>
+                <span>C++</span>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="parcours">
+      <!-- COMPÉTENCES -->
+      <section class="section" id="competences">
         <div class="container">
-          <h2>Parcours</h2>
-          <p class="section-intro">
-            Mon parcours de formation et d'expérience professionnelle en informatique.
-          </p>
+          <header class="sec-head">
+            <span class="sec-num">03</span>
+            <h2>Stack &amp; compétences</h2>
+            <span class="sec-sub">Ce que je maîtrise aujourd’hui</span>
+          </header>
+
+          <div class="skills">
+            <article class="skill">
+              <h3>Frontend</h3>
+              <p>Interfaces responsives, intégration soignée, DA appliquée (Ipomée).</p>
+              <div class="tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+            </article>
+            <article class="skill">
+              <h3>Backend</h3>
+              <p>Logique serveur, APIs, scripts utilitaires et outils métier.</p>
+              <div class="tags">
+                <span>Node.js</span><span>PHP</span><span>Python</span><span>C</span><span>C++</span>
+              </div>
+            </article>
+            <article class="skill">
+              <h3>Données</h3>
+              <p>Modélisation simple et requêtes pour applications web.</p>
+              <div class="tags">
+                <span>SQL</span>
+                <span data-placeholder="true">ORM / BDD — à remplir</span>
+              </div>
+            </article>
+            <article class="skill">
+              <h3>Outils &amp; systèmes</h3>
+              <p>Versioning, shell, environnements Windows et Linux.</p>
+              <div class="tags">
+                <span>Git</span><span>Bash</span><span>Linux</span><span>Windows Server</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="soft-row">
+            <span class="soft-label">Soft skills</span>
+            <span class="badge badge-cold">Autonome</span>
+            <span class="badge badge-mid">Curieux</span>
+            <span class="badge badge-hot">Travail d’équipe</span>
+            <span class="badge badge-cold">Motivé</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PARCOURS -->
+      <section class="section section-lined" id="parcours">
+        <div class="container">
+          <header class="sec-head">
+            <span class="sec-num">04</span>
+            <h2>Parcours</h2>
+            <span class="sec-sub">Formation &amp; expérience</span>
+          </header>
+
           <ol class="timeline">
             <li>
               <span class="timeline-year">Prochaine étape</span>
-              <strong>EPSI Montpellier — Cursus ingénieur BAC+5</strong> — alternance recherchée pour intégrer l'école d'ingénierie.
+              <strong>EPSI Montpellier — BAC+3 Développeur fullstack</strong>
+              <p>Alternance recherchée pour intégrer la formation.</p>
             </li>
             <li>
-              <span class="timeline-year">2024 - 2026</span>
-              <strong>BTS CIEL</strong> — Lycée Turgot, Limoges.
+              <span class="timeline-year">2024 — 2026</span>
+              <strong>BTS CIEL</strong>
+              <p>Lycée Turgot, Limoges. <!-- Optionnel : spécialité / mention — à remplir --></p>
             </li>
             <li>
-              <span class="timeline-year">2024 - 2026</span>
-              <strong>BAC SN RISC</strong> — Lycée Maryse Bastié, Limoges.
+              <span class="timeline-year">Mai — Juillet 2025</span>
+              <strong>Stage AIM 23 (LEAIM)</strong>
+              <p>Réseau, appli web de gestion de parc, script C++ bornes de paiement.</p>
             </li>
             <li>
-              <span class="timeline-year">Mai - Juillet 2025</span>
-              <strong>Stage chez AIM 23</strong> — réorganisation réseau, appli web de gestion de parc et script C++.
+              <span class="timeline-year" data-placeholder="true">Années — à confirmer</span>
+              <strong>BAC SN RISC</strong>
+              <p>Lycée Maryse Bastié, Limoges.</p>
             </li>
           </ol>
         </div>
       </section>
 
-      <section class="section" id="competences">
-        <div class="container">
-          <h2>Compétences</h2>
-          <p class="section-intro">
-            Compétences acquises en formation, en stage et sur mes projets personnels.
-          </p>
-          <div class="skills-grid">
-            <article class="card">
-              <h3>Frontend</h3>
-              <p>Création d'interfaces web, pages responsives et intégration côté client.</p>
-              <span>HTML, CSS, JavaScript</span>
-            </article>
-            <article class="card">
-              <h3>Backend</h3>
-              <p>Développement de logique serveur et scripts utilitaires.</p>
-              <span>Node.js, PHP, Python, C, C++</span>
-            </article>
-            <article class="card">
-              <h3>Données</h3>
-              <p>Manipulation de données et création de requêtes pour applications web.</p>
-              <span>SQL</span>
-            </article>
-            <article class="card">
-              <h3>Outils</h3>
-              <p>Environnements système, versioning et travail en équipe.</p>
-              <span>Git, Bash, Windows Server 2016, Linux (Ubuntu/Arch/Kali)</span>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="projets">
-        <div class="container">
-          <h2>Projets (école & perso)</h2>
-          <p class="section-intro">
-            Projets réalisés en autonomie pour approfondir mes compétences techniques.
-          </p>
-          <div class="projects-grid">
-            <article class="project">
-              <span class="project-tag">Projet personnel</span>
-              <h3>Jeu d'échecs en ligne (2025-2026)</h3>
-              <p>
-                Développement d'une application web permettant à plusieurs utilisateurs de jouer
-                aux échecs en ligne, avec système de lobby et gestion des connexions.
-              </p>
-              <a href="#" aria-label="Voir le projet jeu d'échecs">Technos : JavaScript, Node.js</a>
-            </article>
-            <article class="project">
-              <span class="project-tag">Projet personnel</span>
-              <h3>Logiciel de sécurisation de données (2026)</h3>
-              <p>
-                Développement d'un logiciel avec interface graphique minimaliste pour sécuriser
-                des données via un système de hachage basé sur une clé utilisateur.
-              </p>
-              <a href="#" aria-label="Voir le projet sécurisation">Technos : C++, SHA-256</a>
-            </article>
-            <article class="project">
-              <span class="project-tag">Expérience pro</span>
-              <h3>Stage LEAIM 23 (2025)</h3>
-              <p>
-                Participation à la réorganisation du réseau, création d'une application web de gestion
-                de parc informatique et réalisation d'un script C++ pour récupérer des données de borne de paiement.
-              </p>
-              <a href="#" aria-label="Voir l'expérience de stage">Missions : réseau, dev web, maintenance matériel</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
+      <!-- CONTACT -->
       <section class="section contact" id="contact">
         <div class="container contact-layout">
-          <div>
-            <h2>Contact</h2>
+          <div class="contact-copy">
+            <header class="sec-head">
+              <span class="sec-num">05</span>
+              <h2>Contact</h2>
+            </header>
             <p>
-              Je recherche une alternance à Montpellier pour mon entrée en <strong>cursus ingénieur BAC+5 à EPSI Montpellier</strong>.
-              Si votre entreprise peut accueillir un alternant sur la durée du cycle, contactez-moi.
+              Vous recrutez un alternant développeur fullstack à Montpellier ?
+              Écrivons-nous — je réponds rapidement.
             </p>
-            <p class="contact-hint">
-              Email : <strong>romain.charollais87@gmail.com</strong> · Tél : <strong>06 59 59 90 42</strong> · Montpellier
-            </p>
+            <ul class="contact-direct">
+              <li>
+                <span class="meta-key">Email</span>
+                <a href="mailto:romain.charollais87@gmail.com">romain.charollais87@gmail.com</a>
+              </li>
+              <li>
+                <span class="meta-key">Téléphone</span>
+                <a href="tel:+33659599042">06 59 59 90 42</a>
+              </li>
+              <li>
+                <span class="meta-key">Lieu</span>
+                Montpellier
+              </li>
+            </ul>
           </div>
-          <form class="contact-form">
+
+          <form class="contact-form" id="contactForm">
             <label for="name">Nom</label>
-            <input id="name" type="text" placeholder="Ton nom" required />
+            <input id="name" name="name" type="text" placeholder="Votre nom" required autocomplete="name" />
             <label for="email">Email</label>
-            <input id="email" type="email" placeholder="votre@email.com" required />
+            <input id="email" name="email" type="email" placeholder="votre@email.com" required autocomplete="email" />
             <label for="message">Message</label>
-            <textarea id="message" rows="4" placeholder="Alternance EPSI, poste, rythme école/entreprise, localisation..."></textarea>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Poste, rythme école/entreprise, localisation…"
+              required
+            ></textarea>
             <button type="submit" class="btn btn-primary">Envoyer</button>
+            <p class="form-note" id="formNote" hidden>Merci — je vous recontacte dès que possible.</p>
           </form>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="container">
-        <p>© 2026 — Romain Charollais · Alternance EPSI Montpellier (BAC+5)</p>
+      <div class="container footer-inner">
+        <p>© 2026 Romain Charollais · Alternance EPSI Montpellier (BAC+3 Développeur fullstack)</p>
+        <p class="footer-mark">Visuel inspiré d’Ipomée</p>
       </div>
     </footer>
 

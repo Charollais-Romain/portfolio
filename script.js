@@ -1,15 +1,18 @@
 const menuToggle = document.getElementById("menuToggle");
 const menu = document.getElementById("menu");
-const contactForm = document.querySelector(".contact-form");
+const contactForm = document.getElementById("contactForm");
+const formNote = document.getElementById("formNote");
 
 if (menuToggle && menu) {
   menuToggle.addEventListener("click", () => {
-    menu.classList.toggle("open");
+    const open = menu.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(open));
   });
 
   menu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       menu.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
     });
   });
 }
@@ -17,10 +20,35 @@ if (menuToggle && menu) {
 if (contactForm) {
   contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const button = contactForm.querySelector("button");
+    const button = contactForm.querySelector('button[type="submit"]');
     if (button) {
-      button.textContent = "Message envoyé";
+      button.textContent = "Envoyé";
       button.disabled = true;
     }
+    if (formNote) {
+      formNote.hidden = false;
+    }
+  });
+}
+
+/* Soft scroll-in for section heads when they enter viewport */
+const observeTargets = document.querySelectorAll(".sec-head, .project, .skill, .pitch-block, .timeline li");
+
+if ("IntersectionObserver" in window && observeTargets.length) {
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  observeTargets.forEach((el) => {
+    el.classList.add("will-reveal");
+    io.observe(el);
   });
 }
