@@ -1,5 +1,28 @@
 const menuToggle = document.getElementById("menuToggle");
 const menu = document.getElementById("menu");
+const themeToggle = document.getElementById("themeToggle");
+
+function getTheme() {
+  return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+}
+
+function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+  if (themeToggle) {
+    themeToggle.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Activer le mode clair" : "Activer le mode sombre"
+    );
+  }
+}
+
+if (themeToggle) {
+  setTheme(getTheme());
+  themeToggle.addEventListener("click", () => {
+    setTheme(getTheme() === "dark" ? "light" : "dark");
+  });
+}
 
 if (menuToggle && menu) {
   menuToggle.addEventListener("click", () => {
@@ -52,7 +75,6 @@ function forceMute(video) {
 if (demoToggle && demoPanel && demoVideo) {
   forceMute(demoVideo);
 
-  /* Empêche tout déblocage du son (clic, raccourcis, etc.) */
   demoVideo.addEventListener("volumechange", () => forceMute(demoVideo));
   demoVideo.addEventListener("play", () => forceMute(demoVideo));
 

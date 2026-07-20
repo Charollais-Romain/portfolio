@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +8,13 @@
       name="description"
       content="Romain Charollais, développeur en formation. Recherche une alternance BAC+3 Développeur fullstack à EPSI Montpellier. Stack : React, Vite, Node.js, PostgreSQL, Docker."
     />
+    <script>
+      (() => {
+        const stored = localStorage.getItem("theme");
+        const theme = stored === "light" || stored === "dark" ? stored : "dark";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -35,17 +42,29 @@
           </svg>
           <span class="logo-text">Romain<span class="logo-dot">.</span>dev</span>
         </a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-        <nav class="menu" id="menu">
-          <a href="#accueil">Accueil</a>
-          <a href="#alternance">Alternance</a>
-          <a href="#projets">Projets</a>
-          <a href="#competences">Stack</a>
-          <a href="#parcours">Parcours</a>
-          <a href="#contact">Contact</a>
-        </nav>
+        <div class="nav-actions">
+          <button
+            type="button"
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Activer le mode clair"
+            title="Mode clair / sombre"
+          >
+            <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+            <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+          </button>
+          <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <nav class="menu" id="menu">
+            <a href="#accueil">Accueil</a>
+            <a href="#alternance">Alternance</a>
+            <a href="#projets">Projets</a>
+            <a href="#competences">Stack</a>
+            <a href="#parcours">Parcours</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
       </div>
     </header>
 
